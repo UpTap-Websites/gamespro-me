@@ -1,1 +1,1 @@
-# gamepro-me
+# GamesPro.me
