@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-xl;
+  }
+  h2 {
+    @apply text-lg;
+  }
+  h3 {
+    @apply text-sm;
+  }
+  a,
+  body {
+    @apply text-white;
+  }
+  body {
+    @apply bg-blue-700 md:bg-white;
+  }
+}
+
+ins.adsbygoogle a {
+  display: none !important;
+}
+ins.adsbygoogle[data-ad-status="unfilled"] a {
+  display: block;
+}
