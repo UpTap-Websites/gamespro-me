@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `GamePro.ME`,
+    title: `GamesPro.me`,
     description: `Play Games Online for Free`,
-    author: `GamePro.ME`,
-    siteUrl: `https://www.gamepro.me/`,
+    author: `GamesPro.me`,
+    siteUrl: `https://www.gamespro.me/`,
   },
   plugins: [
     {
@@ -45,8 +45,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GamePro.me`,
-        short_name: `GamePro.me`,
+        name: `GamesPro.me`,
+        short_name: `GamesPro.me`,
         start_url: `/`,
         background_color: `rgb(71 85 105)`,
         // This will impact how browsers show your PWA/website
