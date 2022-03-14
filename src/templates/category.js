@@ -13,7 +13,7 @@ const Category = ({ pageContext: { category, categories, allGames } }) => {
     <Layout>
       <Seo title={`${category} Games`} />
       <div className="container mx-auto pb-4 lg:pb-8">
-        <Adsense slot={`4124206286`} height={`h-[200px]`} />
+        {/* <Adsense slot={`4124206286`} height={`h-[200px]`} /> */}
         <CategoryList
           categories={categories}
           games={allGames}

@@ -30,7 +30,7 @@ const Home = ({ pageContext: { allGames, categories } }) => {
     <Layout>
       <Seo title="Home" />
       <div className="container mx-auto pb-4 lg:pb-8">
-        <Adsense slot={`4124206286`} height={`h-auto`} />
+        {/* <Adsense slot={`4124206286`} height={`h-auto`} /> */}
         <CategoryList categories={categories} games={allGames} />
         <h2 className="sr-only p-4 text-center align-baseline text-2xl font-bold capitalize lg:text-3xl">
           All Games
