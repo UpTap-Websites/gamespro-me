@@ -10,7 +10,7 @@ export const CategoryList = ({ categories, games, className }) => {
   return (
     <div className="relative overflow-hidden after:absolute after:right-0 after:top-0 after:h-full after:w-10 after:bg-gradient-to-r after:from-blue-700/0 after:to-blue-700 md:after:w-0">
       <ul
-        className={`shadow-mask ${className} relative flex w-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden p-4 pr-6 md:flex-wrap md:pr-4`}
+        className={`shadow-mask scrollbar-hide ${className} relative flex w-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden p-4 pr-6 md:flex-wrap md:pr-4`}
       >
         <li className="mb-2 mr-3 snap-center">
           <Link
