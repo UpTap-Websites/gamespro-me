@@ -20,7 +20,7 @@ export default function Adsense({ slot, height, wFull }) {
       <ins
         className="adsbygoogle bg-loading bg-center bg-no-repeat"
         style={{ display: "block" }}
-        data-ad-client={``}
+        data-ad-client={`ca-pub-7075554936132634`}
         data-ad-slot={slot}
         data-ad-format="auto"
         data-full-width-responsive="true"

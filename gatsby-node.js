@@ -1,6 +1,5 @@
 const axios = require("axios")
 
-// const API_URL = `https://games.gamepix.com/games?sid=4693O&order=q`
 const API_URL = `https://uptapapi.uptap.com/h5Game/?type=GameList&platform=uptap&token=dXB0YXBnYW1l572R56uZ55So`
 
 const fetchAPI = url => axios.get(url).then(res => res.data)
