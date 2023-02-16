@@ -25,10 +25,11 @@ export const CategoryList = ({ categories, games, className }) => {
           <li key={category} className="mb-2 mr-3 snap-center">
             <Link
               className="block whitespace-nowrap rounded-lg bg-blue-500 p-2 text-sm"
-              to={`/category/${category.toLowerCase()}`}
+              to={`/category/${category.toLowerCase().replace(/ /, "-")}`}
               activeClassName={`bg-blue-600`}
             >
-              {category} <span>({getGamesCount(category)})</span>
+              {category !== "Io" ? category : ".IO"}{" "}
+              <span>({getGamesCount(category)})</span>
             </Link>
           </li>
         ))}

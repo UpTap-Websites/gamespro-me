@@ -22,7 +22,12 @@ const SingleGame = ({ pageContext: { game } }) => {
             </svg>
           </Link>
           <span className="opacity-30">/</span>
-          <Link to={`/category/${game.category.toLowerCase()}`}>
+          <Link
+            to={`/category/${game.category
+              .toLowerCase()
+              .replace(/ /, "-")
+              .replace(/\./, "-")}`}
+          >
             {game.category}
           </Link>
           <span className="opacity-30">/</span>

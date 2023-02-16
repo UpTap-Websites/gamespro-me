@@ -6,6 +6,8 @@ const fetchAPI = url => axios.get(url).then(res => res.data)
 
 const toSlug = name => toTitle(name).replace(/ /g, "-").toLowerCase()
 
+const IMAGE_FORMAT = `webp`
+
 const toTitle = name =>
   name
     .toString()
@@ -57,7 +59,20 @@ exports.createPages = async ({ actions }) => {
   //     game.orientation == "portrait"
   // )
 
-  allGames.map(game => (game["title"] = toTitle(game.name)))
+  allGames.map(
+    game =>
+      (game["title"] = toTitle(
+        game.name !== "LittelBoxer" ? game.name : "Little Boxer"
+      ))
+  )
+  allGames.map(
+    game =>
+      (game[
+        "icon"
+      ] = `https://cdn.iwantalipstick.com/gameicon2/${IMAGE_FORMAT}/${
+        game.name !== "LittelBoxer" ? game.name : "LittleBoxer"
+      }.${IMAGE_FORMAT}`)
+  )
   allGames.map(game => (game["slug"] = toSlug(game.name)))
   allGames.map(game => (game["star"] = getStars()))
   allGames.map(game => (game["played"] = getCount()))
@@ -67,15 +82,18 @@ exports.createPages = async ({ actions }) => {
         "url"
       ] = `https://cdn.uptapgame.com/newgames/minigame.html?platform=uptap&appid=${game.name}`)
   )
-  allGames.map(
-    game =>
-      (game["category"] = game.category
-        .toString()
-        .toLowerCase()
-        .replace(/^\S/, s => s.toUpperCase()))
+  allGames.map(game =>
+    (game["category"] = game.category
+      .toString()
+      .trim()
+      .toLowerCase()
+      .replace(/gril/, "girl")
+      .replace(/match3/, "match 3")
+      .replace(/sport/, "sports")
+      .replace(/^\S/, s => s.toUpperCase())).replace(/Io/, ".IO")
   )
 
-  allGames.sort((a, b) => (a.time < b.time ? 1 : -1))
+  allGames.sort((a, b) => (new Date(a.time) < new Date(b.time) ? 1 : -1))
 
   let categories = [...new Set(allGames.map(game => game.category))]
 
@@ -95,7 +113,7 @@ exports.createPages = async ({ actions }) => {
 
   categories.forEach(category => {
     createPage({
-      path: `/category/${category.toLowerCase()}`,
+      path: `/category/${category.toLowerCase().replace(/ /, "-")}`,
       component: require.resolve("./src/templates/category.js"),
       context: { allGames, category, categories },
     })
